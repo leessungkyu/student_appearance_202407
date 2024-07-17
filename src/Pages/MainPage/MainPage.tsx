@@ -1,5 +1,7 @@
+import { Link, Navigate } from "react-router-dom";
 import AttendanceList from "../../components/AttendanceList/AttendanceList";
 import AttendanceState from "../../components/AttendanceState/AttendanceState";
+import CalendarApp from "../../components/Calendar/CalendarApp";
 
 type MainType = {
     ListProps: {
@@ -13,11 +15,17 @@ const MainPage = ({ListProps}:MainType) => {
     return <div>
         <div className="flex">
             <div className="flex flex-col">
-                <div><AttendanceState absenceCnt={5} attendanceCnt={5}/></div>
-                <div><AttendanceList List={ListProps}/></div>
+                <div className="border">
+                    <Link to={'/attendance'}>더보기</Link>
+                    <AttendanceState absenceCnt={5} attendanceCnt={5}/>
+                </div>
+                <div className="border">
+                    <Link to={'/studentinfo'}>더보기</Link>
+                    <AttendanceList List={ListProps}/>
+                </div>
             </div>
             <div className="flex flex-col">
-                <div>학사일정</div>
+                <div><CalendarApp /></div>
                 <div>방후활동</div>
             </div>
         </div>

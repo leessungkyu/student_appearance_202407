@@ -16,7 +16,7 @@ const AttendanceList = ({List}:AttendanceListType) => {
                 {item.attendance ?  (
                     item.name + '출석'
                 ) : (
-                    item.name
+                    item.name + '미출석'
                 )
                 }
             </div>
