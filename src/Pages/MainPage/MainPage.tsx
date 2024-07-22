@@ -2,6 +2,7 @@ import { Link, Navigate } from "react-router-dom";
 import AttendanceList from "../../components/AttendanceList/AttendanceList";
 import AttendanceState from "../../components/AttendanceState/AttendanceState";
 import CalendarApp from "../../components/Calendar/CalendarApp";
+import Schedule from "../../components/Schedule/Schedule";
 
 type MainType = {
     ListProps: {
@@ -17,16 +18,16 @@ const MainPage = ({ListProps}:MainType) => {
             <div className="flex flex-col">
                 <div className="border">
                     <Link to={'/attendance'}>더보기</Link>
-                    <AttendanceState absenceCnt={5} attendanceCnt={5}/>
+                    <AttendanceState checkdt="2024-07-21"/> 
                 </div>
                 <div className="border">
                     <Link to={'/studentinfo'}>더보기</Link>
-                    <AttendanceList List={ListProps}/>
+                    <AttendanceList />
                 </div>
             </div>
             <div className="flex flex-col">
                 <div><CalendarApp /></div>
-                <div>방후활동</div>
+                <div><Schedule /></div>
             </div>
         </div>
     </div>
